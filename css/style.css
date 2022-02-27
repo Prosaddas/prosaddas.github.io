@@ -113,6 +113,8 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title--intro {
     font-weight: var(--fw-reg);
+    max-width: 800px;
+    /* margin: 0 4em; */
 }
 
 .section__title--intro strong{
@@ -267,7 +269,7 @@ header {
         display: grid;
         width: min-content;
         margin: 0 auto;
-        grid-column-gap: 1em;
+        /* grid-column-gap: 1em; */
         grid-template-areas:
             "img title"
             "img subtitle";
@@ -276,9 +278,14 @@ header {
 
     .intro__img {
         grid-area: img;
-        min-width: 250px;
+        min-width: 600px;
         position: relative;
         z-index: 2;
+    }
+
+    .section__title--intro {
+        text-align: center;
+        min-width: 800px;
     }
 
     .section__subtitle--intro {
@@ -461,8 +468,13 @@ header {
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
-    transform: scale(1.3);
+    transform: scale(1.5);
     opacity: .75;
+}
+
+.portfolio-item-individual img{
+    display: flex;
+    align-items: center;
 }
 
 /* Footer */
@@ -519,4 +531,8 @@ header {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.portfolio-item-individual img{
+    margin: 0 auto;
 }
