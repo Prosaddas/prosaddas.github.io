@@ -520,3 +520,11 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* style to display inline codes */
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
