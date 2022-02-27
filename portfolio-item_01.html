@@ -32,11 +32,65 @@
         <h1 class="section__title section__title--intro">Simulate melting temperature of PCR primers in python</h1>
     </section>
 
+    <!--body-->
     <div class="portfolio-item-individual">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime distinctio amet doloremque nam architecto accusamus veniam labore, magni quia placeat?</p>
         <img src="img/portfolio-details_01.jpg" alt="">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium at nisi libero rerum pariatur itaque consectetur assumenda obcaecati cum inventore quas reiciendis, ducimus quasi labore aut voluptate autem vel illum laborum. A vitae ea nobis blanditiis dicta?</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, minus ullam. Animi similique quod, quos vitae ex minima, nulla mollitia odio optio reiciendis impedit beatae? Fugiat debitis dolore sint quam ullam error molestiae eaque optio sed est.</p>
+        <pre>
+            <code>
+                
+#!/usr/bin/env python3
+
+from random import choice
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# func to calculate Tm frequency in a ensembl
+def Tm_distribution(Tm_list):
+	# Tm_k_v is a dict storing frequency of Tms 
+	Tm_k_v = {}
+	for i in range(len(Tm_list)):
+		Tm_k_v[Tm_list[i]] = count(Tm_list[i])
+	return Tm_k_v
+
+# function to calculate T_m of a dna string
+def Tm(dna):
+	gc = 0
+	at = 0
+	for j in range(len(dna)):
+		if dna[j] == 'G' or dna[j] == 'C':
+			gc = gc + 1
+		else:
+			at = at + 1
+	return ((2*at) + (4*gc))
+
+# returns a dna string of length 'n'
+def dna_string_maker(n):
+	bases = 'ATCG' # DNA bases
+	dna = ''
+	return dna.join(choice(bases) for base in range(n))
+
+# 10^3 dna sequences each of length 22 bases
+DNA_list = []
+w = 0
+while w < 1000:
+	DNA_list.append(dna_string_maker(22))
+	w += 1
+
+# creates a list of T_ms of dna strings from DNA_list
+Tm_list = [Tm(DNA_list[l]) for l in range(0,len(DNA_list))]
+
+#sorted_Tm_list = sorted(Tm_list)
+
+sns.set()
+plt.hist(Tm_list)
+plt.xlabel('Tm of DNA strings (degree C)')
+plt.ylabel('Number of DNA strings')
+plt.show()
+           </code>
+        </pre>
     </div>
 
 
