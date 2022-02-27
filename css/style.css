@@ -12,7 +12,7 @@
     /* --ff-secondary: sans-serif; */
     /* --ff-primary: 'Source Sans Pro', sans-serif; */
 
-    -fw-reg: 300;
+    --fw-reg: 300;
     --fw-bold: 900;
 
     --clr-dark:#fff;
@@ -436,7 +436,7 @@ header {
     line-height: 1;
     font-size: var(--fs-h3);
     color: var(--clr-light);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-reg);
     z-index: 10;
     position: relative;
 }
