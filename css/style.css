@@ -536,3 +536,12 @@ header {
 .portfolio-item-individual img{
     margin: 0 auto;
 }
+
+.portfolio-item-individual__code {
+    font-family: courier;
+    color: black;
+    background-color: #eee;
+    border: 1px solid #E7E232;
+    display: block;
+    padding: 20px;
+}
